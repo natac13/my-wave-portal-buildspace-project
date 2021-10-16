@@ -1,17 +1,5 @@
+import { Box, Container, Typography } from '@mui/material'
 import * as React from 'react'
-
-import {
-  Container,
-  Typography,
-  Box,
-  Button,
-  Card,
-  CardActions,
-  CardContent,
-  CardHeader,
-  CardMedia,
-  Grid,
-} from '@mui/material'
 
 export default function Index() {
   return (
