@@ -11,6 +11,9 @@ jobs:
   deployment:
     runs-on: ubuntu-latest
 
+    env:
+      NEXT_PUBLIC_BASE_PATH: /my-wave-portal-buildspace-project
+
     strategy:
       matrix:
         node-version: [14.x]
