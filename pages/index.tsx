@@ -11,7 +11,7 @@ import {
 import * as React from 'react'
 import Button from '@mui/material/Button'
 import { ethers } from 'ethers'
-import ContractAbi from '../artifacts/contracts/WavePotal.sol/WavePortal.json'
+import ContractAbi from '../src/WavePortal.json'
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const contractABI = ContractAbi.abi
