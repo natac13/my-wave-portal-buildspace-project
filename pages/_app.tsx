@@ -10,15 +10,18 @@ import Navbar from '../src/Navbar'
 import Copyright from '../src/Copyright'
 import Box from '@mui/material/Box'
 
-// Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache()
-
 interface MyAppProps extends AppProps {
   emotionCache?: EmotionCache
 }
 
 export default function MyApp(props: MyAppProps) {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props
+
+  /*
+   * Just a state variable we use to store our user's public wallet.
+   */
+
   return (
     <CacheProvider value={emotionCache}>
       <Head>
@@ -26,15 +29,18 @@ export default function MyApp(props: MyAppProps) {
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
       <ThemeProvider theme={theme}>
-        {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
-        <Navbar />
-        <Component {...pageProps} />
-        <Box
-          component="footer"
-          sx={{ position: 'absolute', bottom: 0, left: 0, right: 0, mb: 1 }}
-        >
-          <Copyright />
+        <Box>
+          {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
+          <Navbar />
+          <Component {...pageProps} />
+          <Box sx={{ mt: 6 }} />
+          <Box
+            component="footer"
+            sx={{ position: 'fixed', bottom: 0, left: 0, right: 0, mb: 1 }}
+          >
+            <Copyright />
+          </Box>
         </Box>
       </ThemeProvider>
     </CacheProvider>
